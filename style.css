@@ -1,0 +1,100 @@
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: #000;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    .center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    button {
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      background: crimson;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #c2185b;
+    }
+
+    .mailbox {
+      width: 200px;
+      height: 150px;
+      background: #fff;
+      border: 3px solid #555;
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: transform 0.6s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .mailbox.show {
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .full-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100vh;
+      width: 100vw;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 1s;
+    }
+
+    .full-image img {
+      max-width: 90%;
+      max-height: 90%;
+      border: 10px solid #fff;
+      border-radius: 10px;
+    }
+
+    .full-image.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .flower {
+      position: absolute;
+      top: -50px;
+      width: 30px;
+      height: 30px;
+      background-image: url('flo.png'); /* flower png link */
+      background-size: contain;
+      background-repeat: no-repeat;
+      animation: fall 5s linear infinite;
+      z-index: 10;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+      }
+    }
